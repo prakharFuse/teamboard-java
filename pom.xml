@@ -20,10 +20,10 @@
     `com.fasterxml.jackson.core:jackson-databind:2.13.2` TRANSITIVELY. That
     version is vulnerable (GHSA-57j2-w4cx-62h2 / CVE-2022-42003, fixed 2.13.4.2).
 
-    jackson-databind is NOT declared here — so the correct, deterministic
-    remediation is a <dependencyManagement> PIN of jackson-databind to a patched
-    version (Maven's mechanism to force a transitive version), NOT an edit to the
-    <dependencies> below. Keeping main on the vulnerable transitive version is the
+    The vulnerable artifact is NOT declared here — so the correct, deterministic
+    remediation is a Maven dependency-management PIN of it to a patched version
+    (Maven's mechanism to force a transitive version), NOT an edit to the
+    dependencies below. Keeping main on the vulnerable transitive version is the
     point of the fixture; the dependency-fix resolve adds the pin on a PR branch.
   -->
   <dependencies>
